@@ -1,5 +1,4 @@
 #!/bin/bash
-#Dateien hinzufügen!
 NUM=0
 timea=0
 timeb=0
