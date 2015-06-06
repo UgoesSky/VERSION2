@@ -1,0 +1,17 @@
+1. Dateien verändern
+2. Im richtigen Branch?
+	git checkout master
+		     sstv
+3. Veränderte Dateien in staging packen
+entweder
+	git add <DATEINAME> 	für einzelne Datei
+oder
+	git add .		für alle Veränderungen
+3. Commit erstellen
+	git commit -m "BESCHREIBUNG"
+Nun befindet sich die aktuelle Version im lokalen Repository.
+4. Änderung auf den Server schicken
+	git push <origin BRANCHNAME>
+wenn Fehlermeldung, Repo aktualisieren
+	git pull <origin BRANCHNAME>
+5. Weiter bei Schritt 1
