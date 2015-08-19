@@ -35,7 +35,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 7
+Sheet 3 6
 Title ""
 Date ""
 Rev ""
@@ -78,7 +78,7 @@ F 3 "" H 2600 2900 60  0000 C CNN
 	1    2600 2900
 	1    0    0    -1  
 $EndComp
-Text GLabel 1700 1800 0    50   Input ~ 0
+Text GLabel 1700 1800 0    50   Output ~ 0
 MISO
 Text GLabel 1700 1900 0    50   Input ~ 0
 SCK

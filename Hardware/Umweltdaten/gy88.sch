@@ -35,7 +35,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 7
+Sheet 4 6
 Title ""
 Date ""
 Rev ""
@@ -80,8 +80,21 @@ F 3 "" H 2500 2700 60  0000 C CNN
 $EndComp
 Text GLabel 1700 2100 0    50   Input ~ 0
 SDA
-Text GLabel 1700 2000 0    50   Input ~ 0
+Text GLabel 1700 2000 0    50   BiDi ~ 0
 SCL
+Text HLabel 3500 2200 2    60   Output ~ 0
+G_INT
+$Comp
+L JUMPER3 JP?
+U 1 1 55D49031
+P 4200 2100
+F 0 "JP?" H 4250 2000 50  0000 L CNN
+F 1 "JUMPER3" H 4200 2200 50  0000 C BNN
+F 2 "" H 4200 2100 60  0000 C CNN
+F 3 "" H 4200 2100 60  0000 C CNN
+	1    4200 2100
+	0    1    1    0   
+$EndComp
 Wire Wire Line
 	1900 2000 1700 2000
 Wire Wire Line
@@ -90,4 +103,22 @@ Wire Wire Line
 	2500 2500 2500 2700
 Wire Wire Line
 	2600 1600 2600 1400
+Wire Wire Line
+	3500 2200 3200 2200
+Wire Wire Line
+	4100 2100 3200 2100
+Wire Wire Line
+	4200 2350 4200 2600
+Wire Wire Line
+	4200 2600 2500 2600
+Connection ~ 2500 2600
+Wire Wire Line
+	4200 1850 4200 1500
+Wire Wire Line
+	4200 1500 2600 1500
+Connection ~ 2600 1500
+Text HLabel 3500 1900 2    60   Output ~ 0
+M_DRDY
+Wire Wire Line
+	3500 1900 3200 1900
 $EndSCHEMATC

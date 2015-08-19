@@ -35,7 +35,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 7
+Sheet 4 6
 Title ""
 Date ""
 Rev ""
@@ -80,7 +80,7 @@ F 3 "" H 2500 2700 60  0000 C CNN
 $EndComp
 Text GLabel 1700 2100 0    50   Input ~ 0
 SDA
-Text GLabel 1700 2000 0    50   Input ~ 0
+Text GLabel 1700 2000 0    50   BiDi ~ 0
 SCL
 Wire Wire Line
 	1900 2000 1700 2000
