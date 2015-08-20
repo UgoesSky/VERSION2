@@ -1,4 +1,4 @@
-update=Di 18 Aug 2015 18:46:52 CEST
+update=Mi 19 Aug 2015 18:43:58 CEST
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,8 +23,6 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=/home/jonas/Kicad/Kicad libary
@@ -60,3 +58,5 @@ LibName28=contrib
 LibName29=valves
 LibName30=sensors
 LibName31=card
+[general]
+version=1
