@@ -249,10 +249,6 @@ F 3 "" H 3600 6050 30  0000 C CNN
 	1    3600 6050
 	1    0    0    -1  
 $EndComp
-Text GLabel 8300 3800 0    50   3State ~ 0
-PD0
-Text GLabel 8300 3700 0    50   3State ~ 0
-PD0
 Text GLabel 8500 3700 2    50   Input ~ 0
 RX
 Text GLabel 8500 3800 2    50   Output ~ 0
@@ -314,8 +310,6 @@ Wire Wire Line
 Wire Wire Line
 	7600 3800 7100 3800
 Wire Wire Line
-	7100 3700 7600 3700
-Wire Wire Line
 	7600 2800 7100 2800
 Wire Wire Line
 	7100 2700 7600 2700
@@ -364,10 +358,6 @@ Wire Wire Line
 Connection ~ 3600 6300
 Wire Wire Line
 	3600 6300 3900 6300
-Wire Wire Line
-	8300 3800 8500 3800
-Wire Wire Line
-	8300 3700 8500 3700
 Wire Wire Line
 	8500 3550 8300 3550
 Wire Wire Line
@@ -447,4 +437,14 @@ Wire Wire Line
 	3500 2700 3500 3800
 Wire Wire Line
 	2700 4300 5200 4300
+Text GLabel 8300 3800 0    50   3State ~ 0
+PD1
+Text GLabel 8300 3700 0    50   3State ~ 0
+PD0
+Wire Wire Line
+	8300 3800 8500 3800
+Wire Wire Line
+	8500 3700 8300 3700
+Wire Wire Line
+	7600 3700 7100 3700
 $EndSCHEMATC
