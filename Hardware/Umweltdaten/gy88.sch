@@ -122,4 +122,8 @@ M_DRDY
 Wire Wire Line
 	3500 1900 3200 1900
 NoConn ~ 2400 1600
+Wire Wire Line
+	4000 2100 4000 2600
+Connection ~ 4000 2600
+Connection ~ 4000 2100
 $EndSCHEMATC

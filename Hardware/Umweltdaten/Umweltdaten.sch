@@ -80,20 +80,8 @@ F2 "O.S._1" O R 9000 1400 60
 F3 "O.S._2" O R 9000 1600 60 
 F4 "O.S._3" O R 9000 1800 60 
 $EndSheet
-Text GLabel 9300 1400 2    50   3State ~ 0
-PD2
-Text GLabel 9300 1600 2    50   3State ~ 0
-PD3
-Text GLabel 9300 1800 2    50   3State ~ 0
-PD4
-Wire Wire Line
-	9300 1400 9000 1400
-Wire Wire Line
-	9300 1600 9000 1600
-Wire Wire Line
-	9300 1800 9000 1800
 Text GLabel 6300 4600 2    50   3State ~ 0
-PD5
+PD7
 Text GLabel 6300 4900 2    50   3State ~ 0
 PD6
 Wire Wire Line

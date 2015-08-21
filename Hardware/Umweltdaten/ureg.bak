@@ -191,4 +191,12 @@ Wire Wire Line
 	2200 1500 2200 1600
 Wire Wire Line
 	2200 1600 2100 1600
+Wire Wire Line
+	3900 1650 3900 1800
+Wire Wire Line
+	3900 1800 4700 1800
+Wire Wire Line
+	4700 1800 4700 1650
+Connection ~ 4700 1650
+Connection ~ 3900 1650
 $EndSCHEMATC

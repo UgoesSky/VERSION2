@@ -100,7 +100,7 @@ F 3 "" H 2900 1300 60  0000 C CNN
 	1    2900 1300
 	1    0    0    -1  
 $EndComp
-Text GLabel 2100 1600 0    50   Output ~ 0
+Text GLabel 1600 1600 0    50   Output ~ 0
 RESET
 Text GLabel 3000 1500 2    50   Output ~ 0
 MOSI
@@ -112,17 +112,6 @@ Text GLabel 2200 2600 0    50   Output ~ 0
 RX
 Text GLabel 2200 2700 0    50   Input ~ 0
 TX
-$Comp
-L CONN_01X08 P4
-U 1 1 55D46A91
-P 5200 2450
-F 0 "P4" H 5200 2900 50  0000 C CNN
-F 1 "Port B" V 5300 2450 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x08" H 5200 2450 60  0001 C CNN
-F 3 "" H 5200 2450 60  0000 C CNN
-	1    5200 2450
-	-1   0    0    -1  
-$EndComp
 Text GLabel 5700 2100 2    50   3State ~ 0
 PB0
 Text GLabel 5700 2200 2    50   3State ~ 0
@@ -135,10 +124,6 @@ Text GLabel 5700 2500 2    50   3State ~ 0
 PB4
 Text GLabel 5700 2600 2    50   3State ~ 0
 PB5
-Text GLabel 5700 2700 2    50   3State ~ 0
-PB6
-Text GLabel 5700 2800 2    50   3State ~ 0
-PB7
 Text GLabel 5700 3200 2    50   3State ~ 0
 PC0
 Text GLabel 5700 3300 2    50   3State ~ 0
@@ -222,8 +207,6 @@ Wire Wire Line
 Wire Wire Line
 	2300 1500 2100 1500
 Wire Wire Line
-	2300 1600 2100 1600
-Wire Wire Line
 	2900 1600 2900 1700
 Wire Wire Line
 	2800 1600 2900 1600
@@ -249,10 +232,6 @@ Wire Wire Line
 	5700 2500 5400 2500
 Wire Wire Line
 	5400 2600 5700 2600
-Wire Wire Line
-	5700 2700 5400 2700
-Wire Wire Line
-	5400 2800 5700 2800
 Wire Wire Line
 	5700 3200 5400 3200
 Wire Wire Line
@@ -439,4 +418,17 @@ Wire Wire Line
 	2400 2600 2200 2600
 Wire Wire Line
 	2400 2700 2200 2700
+$Comp
+L CONN_01X06 P4
+U 1 1 55D63D02
+P 5200 2350
+F 0 "P4" H 5200 2700 50  0000 C CNN
+F 1 "Port B" V 5300 2350 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06" H 5200 2350 60  0001 C CNN
+F 3 "" H 5200 2350 60  0000 C CNN
+	1    5200 2350
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 1600 1600 1600
 $EndSCHEMATC

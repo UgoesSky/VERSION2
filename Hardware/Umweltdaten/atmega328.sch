@@ -271,7 +271,7 @@ Text GLabel 8500 2600 2    50   Output ~ 0
 SCK
 Text GLabel 8300 3550 0    50   3State ~ 0
 PC6
-Text GLabel 8500 3550 2    50   Input ~ 0
+Text GLabel 9500 3550 2    50   Input ~ 0
 RESET
 Text GLabel 3900 6300 2    50   Input ~ 0
 RESET
@@ -359,8 +359,6 @@ Connection ~ 3600 6300
 Wire Wire Line
 	3600 6300 3900 6300
 Wire Wire Line
-	8500 3550 8300 3550
-Wire Wire Line
 	8300 2600 8500 2600
 Wire Wire Line
 	8500 2500 8300 2500
@@ -447,4 +445,6 @@ Wire Wire Line
 	8500 3700 8300 3700
 Wire Wire Line
 	7600 3700 7100 3700
+Wire Wire Line
+	8300 3550 9500 3550
 $EndSCHEMATC
