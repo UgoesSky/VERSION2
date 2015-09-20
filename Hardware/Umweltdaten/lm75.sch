@@ -151,4 +151,8 @@ Connection ~ 3500 2800
 Wire Wire Line
 	3900 2450 3900 2800
 Connection ~ 3900 2800
+Text HLabel 1900 2400 0    60   Output ~ 0
+O.S.
+Wire Wire Line
+	2100 2400 1900 2400
 $EndSCHEMATC
