@@ -1,4 +1,4 @@
-update=Mi 19 Aug 2015 18:43:58 CEST
+update=So 20 Sep 2015 16:26:12 CEST
 version=1
 last_client=kicad
 [pcbnew]
@@ -60,3 +60,13 @@ LibName30=sensors
 LibName31=card
 [general]
 version=1
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=/home/jonas/UgoesSky/VERSION2/Hardware/Umweltdaten/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
