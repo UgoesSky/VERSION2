@@ -67,9 +67,10 @@ timec=$(( timea + 120 ))
 echo "3" > /home/pi/werte/sstv.txt
 while (( $timec > $timeb ))
 do
+	PIC=$(($PIC + 1))
 	raspistill -q 100 -o $ORT/$DATE.jpg -l $ORT/latest.jpg --nopreview
 	timeb=$(date +%s)
-
+	echo "$DATE:	Foto Nr. $PIC gemacht"
 done
 #Jump into SSTV Schleife
 done
