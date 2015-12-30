@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash #NOTE: Diesen Aufbau gibt es so nicht mehr.
 #echo "18" > /sys/class/gpio/unexport
 #echo "27" > /sys/class/gpio/unexport
 
@@ -28,4 +28,3 @@ reboot
 fi
 
 done
-

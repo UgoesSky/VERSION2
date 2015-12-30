@@ -9,4 +9,5 @@ DATE=$(date +%Y-%m-%d%H-%M-%S)
 echo $DATE
 #Foto machen
 fswebcam -r 1280x720 --skip 30 --no-banner --jpeg -1 $ORT1/$DATE.jpg
+#TODO: Mehrere Kamaras anschließen und ansprechen
 done
