@@ -1,5 +1,7 @@
 #include <Wire.h>
 
+#define address 0x4F
+
 byte msb;
 byte lsb;
 word data;
@@ -14,11 +16,11 @@ void setup()
 
 void loop()
 {
-  Wire.beginTransmission(0x4F);    //write to TMP75
+  Wire.beginTransmission(address);    //write to TMP75
   Wire.write(0x0);                 //set pointer register: 00 = temperature
   Wire.endTransmission(false);     //end write to TMP75
   
-  Wire.requestFrom(0x4F, 2);       //read register(temperature)
+  Wire.requestFrom(address, 2);       //read register(temperature)
   if (Wire.available())
   {
     msb = Wire.read();             //first byte(T11 - T4)
