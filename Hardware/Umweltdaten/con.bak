@@ -1,0 +1,434 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:sensors
+LIBS:card
+LIBS:Umweltdaten-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 6 6
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L CONN_01X03 P3
+U 1 1 55D472F5
+P 2600 2700
+F 0 "P3" H 2600 2900 50  0000 C CNN
+F 1 "RS232" V 2700 2700 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03" H 2600 2700 60  0001 C CNN
+F 3 "" H 2600 2700 60  0000 C CNN
+	1    2600 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR015
+U 1 1 55D472FE
+P 2300 2900
+F 0 "#PWR015" H 2300 2650 50  0001 C CNN
+F 1 "GND" H 2300 2750 50  0000 C CNN
+F 2 "" H 2300 2900 60  0000 C CNN
+F 3 "" H 2300 2900 60  0000 C CNN
+	1    2300 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_02X03 P2
+U 1 1 55D47304
+P 2550 1500
+F 0 "P2" H 2550 1700 50  0000 C CNN
+F 1 "ISP" H 2550 1300 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x03" H 2550 300 60  0001 C CNN
+F 3 "" H 2550 300 60  0000 C CNN
+	1    2550 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR016
+U 1 1 55D4730B
+P 2900 1700
+F 0 "#PWR016" H 2900 1450 50  0001 C CNN
+F 1 "GND" H 2900 1550 50  0000 C CNN
+F 2 "" H 2900 1700 60  0000 C CNN
+F 3 "" H 2900 1700 60  0000 C CNN
+	1    2900 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3V3 #PWR017
+U 1 1 55D47311
+P 2900 1300
+F 0 "#PWR017" H 2900 1150 50  0001 C CNN
+F 1 "+3V3" H 2900 1440 50  0000 C CNN
+F 2 "" H 2900 1300 60  0000 C CNN
+F 3 "" H 2900 1300 60  0000 C CNN
+	1    2900 1300
+	1    0    0    -1  
+$EndComp
+Text GLabel 1600 1600 0    50   Output ~ 0
+RESET
+Text GLabel 3000 1500 2    50   Output ~ 0
+MOSI
+Text GLabel 2100 1400 0    50   Input ~ 0
+MISO
+Text GLabel 2100 1500 0    50   Output ~ 0
+SCK
+Text GLabel 2200 2600 0    50   Output ~ 0
+RX
+Text GLabel 2200 2700 0    50   Input ~ 0
+TX
+Text GLabel 5700 2100 2    50   3State ~ 0
+PB0
+Text GLabel 5700 2200 2    50   3State ~ 0
+PB1
+Text GLabel 5700 2300 2    50   3State ~ 0
+PB2
+Text GLabel 5700 2400 2    50   3State ~ 0
+PB3
+Text GLabel 5700 2500 2    50   3State ~ 0
+PB4
+Text GLabel 5700 2600 2    50   3State ~ 0
+PB5
+Text GLabel 5700 3200 2    50   3State ~ 0
+PC0
+Text GLabel 5700 3300 2    50   3State ~ 0
+PC1
+Text GLabel 5700 3400 2    50   3State ~ 0
+PC2
+Text GLabel 5700 3500 2    50   3State ~ 0
+PC3
+Text GLabel 5700 3600 2    50   3State ~ 0
+PC4
+Text GLabel 5700 3700 2    50   3State ~ 0
+PC5
+Text GLabel 5700 3800 2    50   3State ~ 0
+PC6
+$Comp
+L CONN_01X07 P5
+U 1 1 55D46E94
+P 5200 3500
+F 0 "P5" H 5200 3900 50  0000 C CNN
+F 1 "Port C" V 5300 3500 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x07" H 5200 3500 60  0001 C CNN
+F 3 "" H 5200 3500 60  0000 C CNN
+	1    5200 3500
+	-1   0    0    -1  
+$EndComp
+Text GLabel 5700 4200 2    50   3State ~ 0
+PD0
+Text GLabel 5700 4300 2    50   3State ~ 0
+PD1
+Text GLabel 5700 4400 2    50   3State ~ 0
+PD2
+Text GLabel 5700 4500 2    50   3State ~ 0
+PD3
+Text GLabel 5700 4600 2    50   3State ~ 0
+PD4
+Text GLabel 5700 4700 2    50   3State ~ 0
+PD5
+Text GLabel 5700 4800 2    50   3State ~ 0
+PD6
+Text GLabel 5700 4900 2    50   3State ~ 0
+PD7
+$Comp
+L CONN_01X08 P6
+U 1 1 55D471EF
+P 5200 4550
+F 0 "P6" H 5200 5000 50  0000 C CNN
+F 1 "Port D" V 5300 4550 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x08" H 5200 4550 60  0001 C CNN
+F 3 "" H 5200 4550 60  0000 C CNN
+	1    5200 4550
+	-1   0    0    -1  
+$EndComp
+Text GLabel 5700 5300 2    50   3State ~ 0
+ADC6
+Text GLabel 5700 5400 2    50   3State ~ 0
+ADC7
+$Comp
+L CONN_01X02 P7
+U 1 1 55D476B7
+P 5200 5350
+F 0 "P7" H 5200 5500 50  0000 C CNN
+F 1 "ADC" V 5300 5350 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02" H 5200 5350 60  0001 C CNN
+F 3 "" H 5200 5350 60  0000 C CNN
+	1    5200 5350
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_01X05 P8
+U 1 1 55D47A62
+P 8300 2300
+F 0 "P8" H 8300 2600 50  0000 C CNN
+F 1 "I2C" V 8400 2300 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x05" H 8300 2300 60  0001 C CNN
+F 3 "" H 8300 2300 60  0000 C CNN
+	1    8300 2300
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 1400 2100 1400
+Wire Wire Line
+	2300 1500 2100 1500
+Wire Wire Line
+	2900 1600 2900 1700
+Wire Wire Line
+	2800 1600 2900 1600
+Wire Wire Line
+	2900 1400 2900 1300
+Wire Wire Line
+	2800 1400 2900 1400
+Wire Wire Line
+	3000 1500 2800 1500
+Wire Wire Line
+	2300 2800 2300 2900
+Wire Wire Line
+	2400 2800 2300 2800
+Wire Wire Line
+	5700 2100 5400 2100
+Wire Wire Line
+	5400 2200 5700 2200
+Wire Wire Line
+	5700 2300 5400 2300
+Wire Wire Line
+	5400 2400 5700 2400
+Wire Wire Line
+	5700 2500 5400 2500
+Wire Wire Line
+	5400 2600 5700 2600
+Wire Wire Line
+	5700 3200 5400 3200
+Wire Wire Line
+	5400 3300 5700 3300
+Wire Wire Line
+	5700 3400 5400 3400
+Wire Wire Line
+	5400 3500 5700 3500
+Wire Wire Line
+	5700 3600 5400 3600
+Wire Wire Line
+	5400 3700 5700 3700
+Wire Wire Line
+	5700 3800 5400 3800
+Wire Wire Line
+	5400 4400 5700 4400
+Wire Wire Line
+	5700 4500 5400 4500
+Wire Wire Line
+	5400 4600 5700 4600
+Wire Wire Line
+	5700 4700 5400 4700
+Wire Wire Line
+	5400 4800 5700 4800
+Wire Wire Line
+	5700 4900 5400 4900
+Wire Wire Line
+	5700 5300 5400 5300
+Wire Wire Line
+	5400 5400 5700 5400
+$Comp
+L +3V3 #PWR018
+U 1 1 55D4811A
+P 8600 2000
+F 0 "#PWR018" H 8600 1850 50  0001 C CNN
+F 1 "+3V3" H 8600 2140 50  0000 C CNN
+F 2 "" H 8600 2000 60  0000 C CNN
+F 3 "" H 8600 2000 60  0000 C CNN
+	1    8600 2000
+	1    0    0    -1  
+$EndComp
+Text GLabel 8800 2200 2    50   BiDi ~ 0
+SDA
+Text GLabel 8800 2300 2    50   Input ~ 0
+SCL
+Wire Wire Line
+	8800 2200 8500 2200
+Wire Wire Line
+	8800 2300 8500 2300
+Wire Wire Line
+	8500 2100 8600 2100
+Wire Wire Line
+	8600 2100 8600 2000
+Text HLabel 8800 2400 2    60   Output ~ 0
+O.S._1
+Wire Wire Line
+	8800 2400 8500 2400
+$Comp
+L CONN_01X05 P9
+U 1 1 55D486EC
+P 8300 3600
+F 0 "P9" H 8300 3900 50  0000 C CNN
+F 1 "I2C" V 8400 3600 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x05" H 8300 3600 60  0001 C CNN
+F 3 "" H 8300 3600 60  0000 C CNN
+	1    8300 3600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR019
+U 1 1 55D486F2
+P 8600 3900
+F 0 "#PWR019" H 8600 3650 50  0001 C CNN
+F 1 "GND" H 8600 3750 50  0000 C CNN
+F 2 "" H 8600 3900 60  0000 C CNN
+F 3 "" H 8600 3900 60  0000 C CNN
+	1    8600 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3V3 #PWR020
+U 1 1 55D486F8
+P 8600 3300
+F 0 "#PWR020" H 8600 3150 50  0001 C CNN
+F 1 "+3V3" H 8600 3440 50  0000 C CNN
+F 2 "" H 8600 3300 60  0000 C CNN
+F 3 "" H 8600 3300 60  0000 C CNN
+	1    8600 3300
+	1    0    0    -1  
+$EndComp
+Text GLabel 8800 3500 2    50   BiDi ~ 0
+SDA
+Text GLabel 8800 3600 2    50   Input ~ 0
+SCL
+Wire Wire Line
+	8800 3500 8500 3500
+Wire Wire Line
+	8800 3600 8500 3600
+Wire Wire Line
+	8600 3900 8600 3800
+Wire Wire Line
+	8600 3800 8500 3800
+Wire Wire Line
+	8500 3400 8600 3400
+Wire Wire Line
+	8600 3400 8600 3300
+Text HLabel 8800 3700 2    60   Output ~ 0
+O.S._2
+Wire Wire Line
+	8800 3700 8500 3700
+$Comp
+L CONN_01X05 P10
+U 1 1 55D487D4
+P 8300 4900
+F 0 "P10" H 8300 5200 50  0000 C CNN
+F 1 "I2C" V 8400 4900 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x05" H 8300 4900 60  0001 C CNN
+F 3 "" H 8300 4900 60  0000 C CNN
+	1    8300 4900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR021
+U 1 1 55D487DA
+P 8600 5200
+F 0 "#PWR021" H 8600 4950 50  0001 C CNN
+F 1 "GND" H 8600 5050 50  0000 C CNN
+F 2 "" H 8600 5200 60  0000 C CNN
+F 3 "" H 8600 5200 60  0000 C CNN
+	1    8600 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3V3 #PWR022
+U 1 1 55D487E0
+P 8600 4600
+F 0 "#PWR022" H 8600 4450 50  0001 C CNN
+F 1 "+3V3" H 8600 4740 50  0000 C CNN
+F 2 "" H 8600 4600 60  0000 C CNN
+F 3 "" H 8600 4600 60  0000 C CNN
+	1    8600 4600
+	1    0    0    -1  
+$EndComp
+Text GLabel 8800 4800 2    50   BiDi ~ 0
+SDA
+Text GLabel 8800 4900 2    50   Input ~ 0
+SCL
+Wire Wire Line
+	8800 4800 8500 4800
+Wire Wire Line
+	8800 4900 8500 4900
+Wire Wire Line
+	8600 5200 8600 5100
+Wire Wire Line
+	8600 5100 8500 5100
+Wire Wire Line
+	8500 4700 8600 4700
+Wire Wire Line
+	8600 4700 8600 4600
+Text HLabel 8800 5000 2    60   Output ~ 0
+O.S._3
+Wire Wire Line
+	8800 5000 8500 5000
+$Comp
+L GND #PWR023
+U 1 1 55D47A3E
+P 8600 2600
+F 0 "#PWR023" H 8600 2350 50  0001 C CNN
+F 1 "GND" H 8600 2450 50  0000 C CNN
+F 2 "" H 8600 2600 60  0000 C CNN
+F 3 "" H 8600 2600 60  0000 C CNN
+	1    8600 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8600 2600 8600 2500
+Wire Wire Line
+	8600 2500 8500 2500
+Wire Wire Line
+	5700 4200 5400 4200
+Wire Wire Line
+	5700 4300 5400 4300
+Wire Wire Line
+	2400 2600 2200 2600
+Wire Wire Line
+	2400 2700 2200 2700
+$Comp
+L CONN_01X06 P4
+U 1 1 55D63D02
+P 5200 2350
+F 0 "P4" H 5200 2700 50  0000 C CNN
+F 1 "Port B" V 5300 2350 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06" H 5200 2350 60  0001 C CNN
+F 3 "" H 5200 2350 60  0000 C CNN
+	1    5200 2350
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 1600 1600 1600
+$EndSCHEMATC
