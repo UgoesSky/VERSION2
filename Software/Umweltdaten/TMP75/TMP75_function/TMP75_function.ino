@@ -16,13 +16,13 @@ void loop()
   delay(100);
 }
 
-int tmp75(byte address)
+float tmp75(byte address)
 {
   byte msb;
   byte lsb;
   word data;
-  int shift;
-  int temperature;
+  float shift;
+  float temperature;
 
   Wire.beginTransmission(address);    //write to TMP75
   Wire.write(0x0);                    //set pointer register: 00 = temperature
