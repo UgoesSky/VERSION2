@@ -5,8 +5,8 @@
 byte msb;
 byte lsb;
 word data;
-int shift;
-int temperature;
+float shift;
+float temperature;
 
 void setup()
 {
