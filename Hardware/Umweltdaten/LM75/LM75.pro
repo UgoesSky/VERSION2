@@ -1,4 +1,4 @@
-update=Sa 19 Sep 2015 22:46:37 CEST
+update=Mo 16 Mai 2016 17:24:53 CEST
 version=1
 last_client=kicad
 [pcbnew]
@@ -60,3 +60,13 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=/home/jonas/Kicad/Kicad libary/sensors
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
