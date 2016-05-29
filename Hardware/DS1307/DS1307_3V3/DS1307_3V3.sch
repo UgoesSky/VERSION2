@@ -1,0 +1,277 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:ds1307
+LIBS:lp3985
+LIBS:DS1307_3V3-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L DS1307 U1
+U 1 1 573C94F0
+P 4800 2900
+F 0 "U1" H 5150 2150 60  0000 C CNN
+F 1 "DS1307" H 5150 2250 60  0000 C CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 5100 2200 60  0001 C CNN
+F 3 "" H 5100 2200 60  0000 C CNN
+	1    4800 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R3
+U 1 1 573C95EE
+P 4400 2850
+F 0 "R3" V 4480 2850 50  0000 C CNN
+F 1 "10k" V 4400 2850 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4330 2850 30  0001 C CNN
+F 3 "" H 4400 2850 30  0000 C CNN
+	1    4400 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 573C966D
+P 4200 2850
+F 0 "R2" V 4280 2850 50  0000 C CNN
+F 1 "10k" V 4200 2850 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4130 2850 30  0001 C CNN
+F 3 "" H 4200 2850 30  0000 C CNN
+	1    4200 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R1
+U 1 1 573C9691
+P 4000 2850
+F 0 "R1" V 4080 2850 50  0000 C CNN
+F 1 "10k" V 4000 2850 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 3930 2850 30  0001 C CNN
+F 3 "" H 4000 2850 30  0000 C CNN
+	1    4000 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 3100 4600 3100
+Wire Wire Line
+	4400 3100 4400 3000
+Wire Wire Line
+	3300 3200 4600 3200
+Wire Wire Line
+	4200 3200 4200 3000
+Wire Wire Line
+	4600 3400 4000 3400
+Wire Wire Line
+	4000 3400 4000 3000
+Wire Wire Line
+	4400 2600 4400 2700
+Wire Wire Line
+	3600 2600 4400 2600
+Wire Wire Line
+	4000 2600 4000 2700
+$Comp
+L GND #PWR01
+U 1 1 573C98BA
+P 5150 2600
+F 0 "#PWR01" H 5150 2350 50  0001 C CNN
+F 1 "GND" H 5150 2450 50  0000 C CNN
+F 2 "" H 5150 2600 60  0000 C CNN
+F 3 "" H 5150 2600 60  0000 C CNN
+	1    5150 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 3400 6100 3400
+$Comp
+L C C1
+U 1 1 573C9939
+P 6100 3250
+F 0 "C1" H 6125 3350 50  0000 L CNN
+F 1 "100nF" H 6125 3150 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 6138 3100 30  0001 C CNN
+F 3 "" H 6100 3250 60  0000 C CNN
+	1    6100 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 3100 6100 3100
+Wire Wire Line
+	6100 3400 6100 3600
+Wire Wire Line
+	5800 3200 5700 3200
+Wire Wire Line
+	5800 3200 5800 3400
+Connection ~ 5800 3400
+$Comp
+L +BATT #PWR02
+U 1 1 573CA59E
+P 6100 2400
+F 0 "#PWR02" H 6100 2250 50  0001 C CNN
+F 1 "+BATT" H 6100 2540 50  0000 C CNN
+F 2 "" H 6100 2400 60  0000 C CNN
+F 3 "" H 6100 2400 60  0000 C CNN
+	1    6100 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L D D1
+U 1 1 573CA5BE
+P 6100 2750
+F 0 "D1" H 6100 2850 50  0000 C CNN
+F 1 "D" H 6100 2650 50  0000 C CNN
+F 2 "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10" H 6100 2750 60  0001 C CNN
+F 3 "" H 6100 2750 60  0000 C CNN
+	1    6100 2750
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6100 2400 6100 2600
+Wire Wire Line
+	6100 3100 6100 2900
+$Comp
+L CONN_01X05 P1
+U 1 1 573CA839
+P 3100 3200
+F 0 "P1" H 3100 3500 50  0000 C CNN
+F 1 "I2C" V 3200 3200 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x05" H 3100 3200 60  0001 C CNN
+F 3 "" H 3100 3200 60  0000 C CNN
+	1    3100 3200
+	-1   0    0    -1  
+$EndComp
+Connection ~ 4400 3100
+Connection ~ 4200 3200
+Wire Wire Line
+	4000 3300 3300 3300
+Connection ~ 4000 3300
+Wire Wire Line
+	3600 3000 3300 3000
+Wire Wire Line
+	3600 2400 3600 3000
+Connection ~ 4000 2600
+Wire Wire Line
+	4200 2600 4200 2700
+Connection ~ 4200 2600
+$Comp
+L VCC #PWR03
+U 1 1 573CAB14
+P 3600 2400
+F 0 "#PWR03" H 3600 2250 50  0001 C CNN
+F 1 "VCC" H 3600 2550 50  0000 C CNN
+F 2 "" H 3600 2400 60  0000 C CNN
+F 3 "" H 3600 2400 60  0000 C CNN
+	1    3600 2400
+	1    0    0    -1  
+$EndComp
+Connection ~ 3600 2600
+Wire Wire Line
+	3300 3400 3500 3400
+Wire Wire Line
+	3500 3400 3500 3600
+$Comp
+L GND #PWR04
+U 1 1 573CAC2E
+P 3500 3600
+F 0 "#PWR04" H 3500 3350 50  0001 C CNN
+F 1 "GND" H 3500 3450 50  0000 C CNN
+F 2 "" H 3500 3600 60  0000 C CNN
+F 3 "" H 3500 3600 60  0000 C CNN
+	1    3500 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 2500 6700 2500
+Wire Wire Line
+	6700 2500 6700 2800
+Connection ~ 6100 2500
+Wire Wire Line
+	6700 3500 6100 3500
+Wire Wire Line
+	6700 3100 6700 3500
+Connection ~ 6100 3500
+$Comp
+L CRYSTAL_SMD X1
+U 1 1 573CB5EB
+P 5150 2400
+F 0 "X1" H 5150 2600 50  0000 C CNN
+F 1 "32.768kHz" H 5150 2500 50  0000 C CNN
+F 2 "MS1V-T1K:MS1V-T1K" H 5150 2400 60  0001 C CNN
+F 3 "" H 5150 2400 60  0000 C CNN
+	1    5150 2400
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5150 2500 5150 2600
+Wire Wire Line
+	5350 2400 5350 2500
+Wire Wire Line
+	5350 2500 5300 2500
+Wire Wire Line
+	5300 2500 5300 2700
+Wire Wire Line
+	4950 2400 4950 2500
+Wire Wire Line
+	4950 2500 5000 2500
+Wire Wire Line
+	5000 2500 5000 2700
+$Comp
+L GND #PWR05
+U 1 1 573CBAAC
+P 6100 3600
+F 0 "#PWR05" H 6100 3350 50  0001 C CNN
+F 1 "GND" H 6100 3450 50  0000 C CNN
+F 2 "" H 6100 3600 60  0000 C CNN
+F 3 "" H 6100 3600 60  0000 C CNN
+	1    6100 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Battery BT1
+U 1 1 573CB2A4
+P 6700 2950
+F 0 "BT1" H 6800 3000 50  0000 L CNN
+F 1 "2x3V" H 6800 2900 50  0000 L CNN
+F 2 "KZH-20:KZH-20" V 6700 2990 60  0001 C CNN
+F 3 "" V 6700 2990 60  0000 C CNN
+	1    6700 2950
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
