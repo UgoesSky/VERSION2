@@ -1,9 +1,9 @@
 (kicad_pcb (version 4) (host pcbnew 0.201508170901+6097~28~ubuntu14.04.1-product)
 
   (general
-    (links 0)
+    (links 22)
     (no_connects 0)
-    (area 149.924999 101.924999 168.075001 117.075001)
+    (area 141.500001 96.15 168.075001 117.075001)
     (thickness 1.6)
     (drawings 14)
     (tracks 193)
@@ -37,14 +37,14 @@
   )
 
   (setup
-    (last_trace_width 0.254)
+    (last_trace_width 0.508)
     (user_trace_width 0.2032)
     (user_trace_width 0.254)
     (user_trace_width 0.3048)
     (user_trace_width 0.4064)
     (user_trace_width 0.508)
     (trace_clearance 0.2032)
-    (zone_clearance 0)
+    (zone_clearance 0.2032)
     (zone_45_only no)
     (trace_min 0.2032)
     (segment_width 0.2)
@@ -68,11 +68,11 @@
     (pad_size 1.524 1.524)
     (pad_drill 0.762)
     (pad_to_mask_clearance 0.2)
-    (aux_axis_origin 0 0)
+    (aux_axis_origin 150 102)
     (visible_elements FFFFFF7F)
     (pcbplotparams
-      (layerselection 0x00030_80000001)
-      (usegerberextensions false)
+      (layerselection 0x010f0_80000001)
+      (usegerberextensions true)
       (excludeedgelayer true)
       (linewidth 0.100000)
       (plotframeref false)
@@ -92,9 +92,9 @@
       (subtractmaskfromsilk false)
       (outputformat 1)
       (mirror false)
-      (drillshape 1)
+      (drillshape 0)
       (scaleselection 1)
-      (outputdirectory ""))
+      (outputdirectory Gerber/))
   )
 
   (net 0 "")
@@ -665,7 +665,7 @@
   (segment (start 154.305 106.68) (end 152.4 106.68) (width 0.3048) (layer F.Cu) (net 8) (tstamp 57389EE9))
 
   (zone (net 2) (net_name GND) (layer B.Cu) (tstamp 5738A8C6) (hatch edge 0.508)
-    (connect_pads (clearance 0))
+    (connect_pads (clearance 0.2032))
     (min_thickness 0.254)
     (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
     (polygon
@@ -675,7 +675,7 @@
     )
     (filled_polygon
       (pts
-        (xy 167.798 116.798) (xy 150.202 116.798) (xy 150.202 102.202) (xy 167.798 102.202)
+        (xy 167.5948 116.5948) (xy 150.4052 116.5948) (xy 150.4052 102.4052) (xy 167.5948 102.4052)
       )
     )
   )
