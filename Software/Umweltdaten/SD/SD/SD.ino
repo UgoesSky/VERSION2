@@ -69,6 +69,20 @@ void setup()
 
   bmp085Calibration();
   Serial.println("BMP085 start");
+
+  Serial.print("temperature 1;");
+  Serial.print("temperature 2;");
+  Serial.print("pressure;");
+  Serial.print("atm;");
+  Serial.print("altitude;");
+  Serial.println("n");
+
+  file.print("temperature 1;");
+  file.print("temperature 2;");
+  file.print("pressure;");
+  file.print("atm;");
+  file.print("altitude;");
+  file.println("n");
 }
 
 void loop()
@@ -92,33 +106,32 @@ void loop()
       float altitude = calcAltitude(pressure); //Uncompensated caculation - in Meters
 
 
-      Serial.print("temperature 1:");
-      Serial.println(temperature_1);
-      Serial.print("temperature 2:");
-      Serial.println(temperature_2);
+      Serial.print(temperature_1);
+      Serial.print(";");
+      Serial.print(temperature_2);
 
-      Serial.print("pressure:");
-      Serial.println(pressure);
-      Serial.print("atm:");
-      Serial.println(atm);
-      Serial.print("altitude:");
-      Serial.println(altitude);
-      Serial.print("n:");
+      Serial.print(";");
+      Serial.print(pressure);
+      Serial.print(";");
+      Serial.print(atm);
+      Serial.print(";");
+      Serial.print(altitude);
+      Serial.print(";");
       Serial.println(n);
 
 
-      file.print("temperature 1:");
-      file.println(temperature_1);
-      file.print("temperature 2:");
-      file.println(temperature_2);
+      file.print(";");
+      file.print(temperature_1);
+      file.print(";");
+      file.print(temperature_2);
 
-      file.print("pressure:");
-      file.println(pressure);
-      file.print("atm:");
-      file.println(atm);
-      file.print("altitude:");
-      file.println(altitude);
-      file.print("n:");
+      file.print(";");
+      file.print(pressure);
+      file.print(";");
+      file.print(atm);
+      file.print(";");
+      file.print(altitude);
+      file.print(";");
       file.println(n);
 
     }
