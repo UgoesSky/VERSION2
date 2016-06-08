@@ -4,6 +4,7 @@
 
 #define tmp75_address_1 0x4F
 #define bmp085_address 0x77
+#define ds1307_address 0x68
 
 unsigned long previousMillis = 0;
 const long interval = 1000;
@@ -88,6 +89,7 @@ void setup()
 void loop()
 {
   int n = 0;
+  byte time[7];
 
   while (n < 60)
   {
@@ -97,7 +99,9 @@ void loop()
     {
       previousMillis = currentMillis;
       n++;
-
+      
+      ds1307(ds1307_address, time);
+      
       float temperature_2 = tmp75(tmp75_address_1);
 
       float temperature_1 = bmp085GetTemperature(bmp085ReadUT()); //MUST be called first
@@ -117,6 +121,18 @@ void loop()
       Serial.print(";");
       Serial.print(altitude);
       Serial.print(";");
+      Serial.print(time[6],HEX);
+      Serial.print("-");
+      Serial.print(time[5],HEX);
+      Serial.print("-");
+      Serial.print(time[4],HEX);
+      Serial.print("T");
+      Serial.print(time[2],HEX);
+      Serial.print(":");
+      Serial.print(time[1],HEX);
+      Serial.print(":");
+      Serial.print(time[0],HEX);
+      Serial.print(";");
       Serial.println(n);
 
 
@@ -132,6 +148,18 @@ void loop()
       file.print(";");
       file.print(altitude);
       file.print(";");
+      file.print(time[6],HEX);
+      file.print("-");
+      file.print(time[5],HEX);
+      file.print("-");
+      file.print(time[4],HEX);
+      file.print("T");
+      file.print(time[2],HEX);
+      file.print(":");
+      file.print(time[1],HEX);
+      file.print(":");
+      file.print(time[0],HEX);
+      file.print(";");
       file.println(n);
 
     }
@@ -141,6 +169,25 @@ void loop()
   file.println("save");
 }
 
+
+void ds1307(byte address, byte* time)
+{ 
+  Wire.beginTransmission(address);    //write to DS1307
+  Wire.write(0x0);                    //set  pointer register
+  Wire.endTransmission(false);        //Start repeat
+  
+  Wire.requestFrom(address, 7);       //read from DS1307: seconds - year
+  if (Wire.available())
+  {
+    time[0] = Wire.read();            //second
+    time[1] = Wire.read();            //minute
+    time[2] = Wire.read();            //hour
+    time[3] = Wire.read();            //weekday
+    time[4] = Wire.read();            //date
+    time[5] = Wire.read();            //month
+    time[6] = Wire.read();            //year
+  }
+}
 
 float tmp75(byte address)
 {

@@ -33,11 +33,11 @@ void loop()
 
 void ds1307(byte address, byte* time)
 { 
-  Wire.beginTransmission(0x68);    //write to DS1307
+  Wire.beginTransmission(address);    //write to DS1307
   Wire.write(0x0);                    //set  pointer register
   Wire.endTransmission(false);        //Start repeat
   
-  Wire.requestFrom(0x68, 7);       //read from DS1307: seconds - year
+  Wire.requestFrom(address, 7);       //read from DS1307: seconds - year
   if (Wire.available())
   {
     time[0] = Wire.read();            //second
