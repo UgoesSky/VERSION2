@@ -64,7 +64,7 @@ void setup()
 
   Wire.beginTransmission(tmp75_address_1);    //write to TMP75
   Wire.write(0x1);                            //set pointer register: 01 = configuration
-  Wire.write(0x21);                           //write configuration
+  Wire.write(0x61);                           //write configuration
   Wire.endTransmission();
   Serial.println("TMP75 start");
 
@@ -76,6 +76,7 @@ void setup()
   Serial.print("pressure;");
   Serial.print("atm;");
   Serial.print("altitude;");
+  Serial.print("time;");
   Serial.println("n");
 
   file.print("temperature 1;");
@@ -83,6 +84,7 @@ void setup()
   file.print("pressure;");
   file.print("atm;");
   file.print("altitude;");
+  file.print("time;");
   file.println("n");
 }
 
@@ -99,9 +101,9 @@ void loop()
     {
       previousMillis = currentMillis;
       n++;
-      
+
       ds1307(ds1307_address, time);
-      
+
       float temperature_2 = tmp75(tmp75_address_1);
 
       float temperature_1 = bmp085GetTemperature(bmp085ReadUT()); //MUST be called first
@@ -110,55 +112,54 @@ void loop()
       float altitude = calcAltitude(pressure); //Uncompensated caculation - in Meters
 
 
-      Serial.print(temperature_1);
+      Serial.print(temperature_1, 2);
       Serial.print(";");
-      Serial.print(temperature_2);
+      Serial.print(temperature_2, 4);
 
       Serial.print(";");
-      Serial.print(pressure);
+      Serial.print(pressure, 0);
       Serial.print(";");
-      Serial.print(atm);
+      Serial.print(atm, 4);
       Serial.print(";");
-      Serial.print(altitude);
+      Serial.print(altitude, 2);
       Serial.print(";");
-      Serial.print(time[6],HEX);
+      Serial.print(time[6], HEX);
       Serial.print("-");
-      Serial.print(time[5],HEX);
+      Serial.print(time[5], HEX);
       Serial.print("-");
-      Serial.print(time[4],HEX);
+      Serial.print(time[4], HEX);
       Serial.print("T");
-      Serial.print(time[2],HEX);
+      Serial.print(time[2], HEX);
       Serial.print(":");
-      Serial.print(time[1],HEX);
+      Serial.print(time[1], HEX);
       Serial.print(":");
-      Serial.print(time[0],HEX);
+      Serial.print(time[0], HEX);
       Serial.print(";");
       Serial.println(n);
 
 
+      file.print(temperature_1, 2);
       file.print(";");
-      file.print(temperature_1);
-      file.print(";");
-      file.print(temperature_2);
+      file.print(temperature_2, 4);
 
       file.print(";");
-      file.print(pressure);
+      file.print(pressure, 0);
       file.print(";");
-      file.print(atm);
+      file.print(atm, 4);
       file.print(";");
-      file.print(altitude);
+      file.print(altitude, 2);
       file.print(";");
-      file.print(time[6],HEX);
+      file.print(time[6], HEX);
       file.print("-");
-      file.print(time[5],HEX);
+      file.print(time[5], HEX);
       file.print("-");
-      file.print(time[4],HEX);
+      file.print(time[4], HEX);
       file.print("T");
-      file.print(time[2],HEX);
+      file.print(time[2], HEX);
       file.print(":");
-      file.print(time[1],HEX);
+      file.print(time[1], HEX);
       file.print(":");
-      file.print(time[0],HEX);
+      file.print(time[0], HEX);
       file.print(";");
       file.println(n);
 
@@ -166,16 +167,15 @@ void loop()
   }
   file.flush();
   Serial.println("save");
-  file.println("save");
 }
 
 
 void ds1307(byte address, byte* time)
-{ 
+{
   Wire.beginTransmission(address);    //write to DS1307
   Wire.write(0x0);                    //set  pointer register
   Wire.endTransmission(false);        //Start repeat
-  
+
   Wire.requestFrom(address, 7);       //read from DS1307: seconds - year
   if (Wire.available())
   {
