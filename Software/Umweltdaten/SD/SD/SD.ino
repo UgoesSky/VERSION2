@@ -2,7 +2,7 @@
 #include <SD.h>
 #include <Wire.h>
 
-#define tmp75_address_1 0x4F
+#define tmp75_address_1 0x48
 #define bmp085_address 0x77
 #define ds1307_address 0x68
 
@@ -196,6 +196,11 @@ float tmp75(byte address)
   word data;
   float shift;
   float temperature;
+
+  Wire.beginTransmission(address);   //write to TMP75
+  Wire.write(0x1);                    //set pointer register: 01 = configuration
+  Wire.write(0xE1);                    //write configuration: One-Shot
+  Wire.endTransmission();
 
   Wire.beginTransmission(address);    //write to TMP75
   Wire.write(0x0);                    //set pointer register: 00 = temperature

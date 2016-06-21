@@ -1,6 +1,6 @@
 #include <Wire.h>
 
-#define address 0x4F
+#define address 0x48
 
 byte msb;
 byte lsb;
@@ -13,13 +13,9 @@ void setup()
   Serial.begin(9600);
   Wire.begin();
   
-  pinMode(8,OUTPUT);
-  digitalWrite(8,HIGH);
-  delay(100);
-  
   Wire.beginTransmission(address);    //write to TMP75
   Wire.write(0x1);                    //set pointer register: 01 = configuration
-  Wire.write(0x21);                    //write configuration
+  Wire.write(0x61);                   //write configuration
   Wire.endTransmission();
 }
 
@@ -27,7 +23,7 @@ void loop()
 {
   Wire.beginTransmission(address);   //write to TMP75
   Wire.write(0x1);                    //set pointer register: 01 = configuration
-  Wire.write(0xA1);                    //write configuration: One-Shot
+  Wire.write(0xE1);                    //write configuration: One-Shot
   Wire.endTransmission();
     Wire.beginTransmission(address);   //write to TMP75
   Wire.write(0x0);                   //set pointer register: 00 = temperature
@@ -54,7 +50,7 @@ void loop()
   Serial.print("shift:");
   Serial.print(shift);
   Serial.print("temperature:");
-  Serial.print(temperature,2);
+  Serial.print(temperature,4);
   
   delay(100);
 }
