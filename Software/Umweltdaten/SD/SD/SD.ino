@@ -12,6 +12,7 @@ const long interval = 1000;
 File file;
 
 const int CS = 10;  //SPI chip select for SDcard
+const int batteryPin = A7;  //ADC pin to messure battery voltage
 
 const unsigned char OSS = 0;  //Oversampling Setting for BMP085
 
@@ -39,6 +40,10 @@ void setup()
 {
   Serial.begin(9600);
   Serial.println("Serial start");
+
+  analogReference(INTERNAL);
+  pinMode(batteryPin, INPUT);
+  Serial.println("ADC start");
 
   Wire.begin();
   Serial.println("Wire start");
@@ -76,6 +81,7 @@ void setup()
   Serial.print("pressure;");
   Serial.print("atm;");
   Serial.print("altitude;");
+  Serial.print("battery;");
   Serial.print("time;");
   Serial.println("n");
 
@@ -84,6 +90,7 @@ void setup()
   file.print("pressure;");
   file.print("atm;");
   file.print("altitude;");
+  file.print("battery;");
   file.print("time;");
   file.println("n");
 }
@@ -111,18 +118,23 @@ void loop()
       float atm = pressure / 101325; // "standard atmosphere"
       float altitude = calcAltitude(pressure); //Uncompensated caculation - in Meters
 
+      int battery = analogRead(batteryPin);
 
       Serial.print(temperature_1, 2);
       Serial.print(";");
       Serial.print(temperature_2, 4);
-
       Serial.print(";");
+      
       Serial.print(pressure, 0);
       Serial.print(";");
       Serial.print(atm, 4);
       Serial.print(";");
       Serial.print(altitude, 2);
       Serial.print(";");
+      
+      Serial.print(battery);
+      Serial.print(";");
+      
       Serial.print(time[6], HEX);
       Serial.print("-");
       Serial.print(time[5], HEX);
@@ -135,20 +147,25 @@ void loop()
       Serial.print(":");
       Serial.print(time[0], HEX);
       Serial.print(";");
+      
       Serial.println(n);
 
 
       file.print(temperature_1, 2);
       file.print(";");
       file.print(temperature_2, 4);
-
       file.print(";");
+      
       file.print(pressure, 0);
       file.print(";");
       file.print(atm, 4);
       file.print(";");
       file.print(altitude, 2);
       file.print(";");
+      
+      file.print(battery);
+      file.print(";");
+      
       file.print(time[6], HEX);
       file.print("-");
       file.print(time[5], HEX);
@@ -161,6 +178,7 @@ void loop()
       file.print(":");
       file.print(time[0], HEX);
       file.print(";");
+      
       file.println(n);
 
     }
@@ -168,7 +186,6 @@ void loop()
   file.flush();
   Serial.println("save");
 }
-
 
 void ds1307(byte address, byte* time)
 {
