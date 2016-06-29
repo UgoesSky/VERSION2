@@ -1,15 +1,20 @@
 #include <SPI.h>
 #include <SD.h>
 #include <Wire.h>
+#include <DHT.h>
 
 #define tmp75_address_1 0x48
 #define bmp085_address 0x77
 #define ds1307_address 0x68
 
+#define DHTPIN 8
+#define DHTTYPE DHT22
+
 unsigned long previousMillis = 0;
 const long interval = 1000;
 
 File file;
+DHT dht(DHTPIN, DHTTYPE);
 
 const int CS = 10;  //SPI chip select for SDcard
 const int batteryPin = A7;  //ADC pin to messure battery voltage
@@ -45,6 +50,9 @@ void setup()
   pinMode(batteryPin, INPUT);
   Serial.println("ADC start");
 
+  dht.begin();
+  Serial.println("DHT22 start");
+
   Wire.begin();
   Serial.println("Wire start");
 
@@ -78,6 +86,8 @@ void setup()
 
   Serial.print("temperature 1;");
   Serial.print("temperature 2;");
+  Serial.print("temperature 3;");
+  Serial.print("humidity;");
   Serial.print("pressure;");
   Serial.print("atm;");
   Serial.print("altitude;");
@@ -87,6 +97,8 @@ void setup()
 
   file.print("temperature 1;");
   file.print("temperature 2;");
+  file.print("temperature 3;");
+  file.print("humidity;");
   file.print("pressure;");
   file.print("atm;");
   file.print("altitude;");
@@ -111,7 +123,10 @@ void loop()
 
       ds1307(ds1307_address, time);
 
-      float temperature_2 = tmp75(tmp75_address_1);
+      float temperature_3 = tmp75(tmp75_address_1);
+
+      float humidity = dht.readHumidity();
+      float temperature_2 = dht.readTemperature();
 
       float temperature_1 = bmp085GetTemperature(bmp085ReadUT()); //MUST be called first
       float pressure = bmp085GetPressure(bmp085ReadUP());
@@ -120,21 +135,26 @@ void loop()
 
       int battery = analogRead(batteryPin);
 
-      Serial.print(temperature_1, 2);
+      Serial.print(temperature_1, 1);
       Serial.print(";");
-      Serial.print(temperature_2, 4);
+      Serial.print(temperature_2, 1);
       Serial.print(";");
-      
+      Serial.print(temperature_3, 4);
+      Serial.print(";");
+
+      Serial.print(humidity, 1);
+      Serial.print(";");
+
       Serial.print(pressure, 0);
       Serial.print(";");
       Serial.print(atm, 4);
       Serial.print(";");
       Serial.print(altitude, 2);
       Serial.print(";");
-      
+
       Serial.print(battery);
       Serial.print(";");
-      
+
       Serial.print(time[6], HEX);
       Serial.print("-");
       Serial.print(time[5], HEX);
@@ -147,25 +167,30 @@ void loop()
       Serial.print(":");
       Serial.print(time[0], HEX);
       Serial.print(";");
-      
+
       Serial.println(n);
 
 
-      file.print(temperature_1, 2);
+      file.print(temperature_1, 1);
       file.print(";");
-      file.print(temperature_2, 4);
+      file.print(temperature_2, 1);
       file.print(";");
-      
+      file.print(temperature_3, 4);
+      file.print(";");
+
+      file.print(humidity, 1);
+      file.print(";");
+
       file.print(pressure, 0);
       file.print(";");
       file.print(atm, 4);
       file.print(";");
       file.print(altitude, 2);
       file.print(";");
-      
+
       file.print(battery);
       file.print(";");
-      
+
       file.print(time[6], HEX);
       file.print("-");
       file.print(time[5], HEX);
@@ -178,7 +203,7 @@ void loop()
       file.print(":");
       file.print(time[0], HEX);
       file.print(";");
-      
+
       file.println(n);
 
     }
