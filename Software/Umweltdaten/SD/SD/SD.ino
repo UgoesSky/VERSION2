@@ -341,10 +341,12 @@ char bmp085Read(unsigned char address)
   Wire.endTransmission();
 
   Wire.requestFrom(bmp085_address, 1);
-  while (!Wire.available())
-    ;
+  if (Wire.available())
+  {
+    data = Wire.read();
+  }
 
-  return Wire.read();
+  return data;
 }
 
 // Read 2 bytes from the BMP085
@@ -359,11 +361,11 @@ int bmp085ReadInt(unsigned char address)
   Wire.endTransmission();
 
   Wire.requestFrom(bmp085_address, 2);
-  while (Wire.available() < 2)
-    ;
-  msb = Wire.read();
-  lsb = Wire.read();
-
+  if (Wire.available() >= 2)
+  {
+    msb = Wire.read();
+    lsb = Wire.read();
+  }
   return (int) msb << 8 | lsb;
 }
 
@@ -427,12 +429,11 @@ int readRegister(int deviceAddress, byte address) {
   Wire.endTransmission();
 
   Wire.requestFrom(deviceAddress, 1); // read a byte
-
-  while (!Wire.available()) {
-    // waiting
+  if (Wire.available())
+  {
+    v = Wire.read();
   }
 
-  v = Wire.read();
   return v;
 }
 
